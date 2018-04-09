@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Cthlulu : MonoBehaviour
 {
@@ -20,16 +22,21 @@ public class Cthlulu : MonoBehaviour
     {
         if (other.gameObject.tag == "GoodPlanet")
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
             // Score decreases by 100 points
 
         }
 
         if (other.gameObject.tag == "BadPlanet")
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
             // Score increases by 100 points
 
         }
+    }
+
+    private void Destroy(string tag)
+    {
+        throw new NotImplementedException();
     }
 }

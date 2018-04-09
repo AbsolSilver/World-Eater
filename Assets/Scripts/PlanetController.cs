@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlanetController : MonoBehaviour
 {
+    public int index = 9;
     public GameObject[] planets;
     public float spawnRate = 1f;
     public float spawnRadius = 5f;
 
     void Spawn()
     {
-        Vector3 rand = Random.insideUnitSphere * spawnRadius;
+        Vector3 rand = Random.insideUnitCircle * spawnRadius;
         rand.z = 0f;
         Vector3 position = transform.position + rand;
         int randIndex = Random.Range(0, planets.Length);
